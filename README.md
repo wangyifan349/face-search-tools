@@ -24,7 +24,7 @@ Current tool: `dlib_faiss_flask_1n_single_file.py`
 - ✅ Match status based on configurable threshold
 - 🎛️ Configurable result count
 - 🧩 Single Python file for easier testing and deployment
-- 🌿 Simple Bootstrap interface with a clean visual style
+- 🌿 Simple Bootstrap interface
 - 📜 AGPL-3.0 open-source license
 
 ## 📦 Repository
@@ -33,15 +33,15 @@ Current tool: `dlib_faiss_flask_1n_single_file.py`
 https://github.com/wangyifan349/face-search-tools
 ```
 
-Suggested GitHub repository description:
+Suggested GitHub description:
 
 ```text
-Simple face search tools using dlib face embeddings, FAISS, cosine similarity, and Euclidean distance.
+Open-source face search toolkit for local image datasets, including 1:N search with dlib embeddings, FAISS ranking, cosine similarity, and Euclidean distance.
 ```
 
-## 🧰 Environment Requirements
+## 🧰 Requirements
 
-Recommended:
+Recommended environment:
 
 - Python 3.9+
 - pip
@@ -54,134 +54,80 @@ Recommended:
 - NumPy
 - Pillow
 
-The most important dependency is `dlib`. The Python package `face_recognition` depends on `dlib`, so the system must be able to compile or install dlib correctly.
+`face_recognition` depends on `dlib`. If `dlib` installation fails, make sure CMake, a C++ compiler, and Python development headers are installed.
 
-## 🚀 Installation
-
-### 1. Clone the repository
+## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/wangyifan349/face-search-tools.git
+git clone https://github.com/wangyifan349/face-search-tools
 cd face-search-tools
-```
-
-### 2. Create a virtual environment
-
-Linux / macOS:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
 python -m pip install --upgrade pip setuptools wheel
+pip install numpy pillow flask faiss-cpu
+pip install dlib
+pip install face_recognition
+python dlib_faiss_flask_1n_single_file.py
 ```
 
-Windows PowerShell:
+Then open:
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip setuptools wheel
+```text
+http://127.0.0.1:5000
 ```
 
-## 🐧 Linux Deployment
+## 🐧 Linux Setup
 
 Ubuntu / Debian:
 
 ```bash
 sudo apt update
 sudo apt install -y build-essential cmake python3-dev python3-pip python3-venv
-```
-
-Then install Python packages:
-
-```bash
-pip install numpy pillow flask faiss-cpu
-pip install dlib
-pip install face_recognition
-```
-
-Or install them together:
-
-```bash
-pip install numpy pillow flask faiss-cpu dlib face_recognition
-```
-
-If `dlib` installation fails, check that `cmake`, a C++ compiler, and Python development headers are installed.
-
-## 🍎 macOS Deployment
-
-Install build tools:
-
-```bash
-xcode-select --install
-```
-
-If you use Homebrew:
-
-```bash
-brew install cmake
-```
-
-Then install Python packages:
-
-```bash
-pip install numpy pillow flask faiss-cpu
-pip install dlib
-pip install face_recognition
-```
-
-## 🪟 Windows Deployment
-
-Windows dlib installation may require Visual Studio Build Tools.
-
-Install:
-
-- Python 3.9+
-- CMake
-- Visual Studio Build Tools with C++ build tools
-
-Then run:
-
-```powershell
+git clone https://github.com/wangyifan349/face-search-tools
+cd face-search-tools
+python3 -m venv .venv
+source .venv/bin/activate
 python -m pip install --upgrade pip setuptools wheel
 pip install numpy pillow flask faiss-cpu
 pip install dlib
 pip install face_recognition
-```
-
-If building `dlib` fails on Windows, using Conda is often easier:
-
-```powershell
-conda create -n face-search python=3.9 -y
-conda activate face-search
-conda install -c conda-forge dlib -y
-pip install face_recognition flask numpy pillow faiss-cpu
-```
-
-## 🧪 Quick Start
-
-Put gallery images into the configured local image folder.
-
-By default, the current tool is designed for folders such as:
-
-```text
-face_database/
-runtime_uploads/
-```
-
-Run the application:
-
-```bash
 python dlib_faiss_flask_1n_single_file.py
 ```
 
-Open in your browser:
+Open:
 
 ```text
 http://127.0.0.1:5000
 ```
 
-Upload a query image and view ranked search results.
+## 🪟 Windows Setup
+
+Install these first:
+
+- Python 3.9+
+- CMake
+- Visual Studio Build Tools with C++ build tools
+- Git
+
+Then run in PowerShell:
+
+```powershell
+git clone https://github.com/wangyifan349/face-search-tools
+cd face-search-tools
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip setuptools wheel
+pip install numpy pillow flask faiss-cpu
+pip install dlib
+pip install face_recognition
+python dlib_faiss_flask_1n_single_file.py
+```
+
+Open:
+
+```text
+http://127.0.0.1:5000
+```
+
+If `dlib` fails to build on Windows, install Visual Studio Build Tools and CMake first, then try again.
 
 ## 🗂️ Suggested Project Structure
 
@@ -215,7 +161,7 @@ Each result displays practical information:
 
 ## ⚙️ Configuration
 
-The current tool is intentionally kept as a single Python file.
+The tool is intentionally kept as a single Python file.
 
 Common items you may want to adjust inside the script:
 
@@ -228,20 +174,24 @@ Common items you may want to adjust inside the script:
 - Face encoding jitter count
 - Supported image extensions
 
+## ☕ Buy Me a Coffee
+
+If this project helps you, you can optionally support the author.
+
+| Coin | Address |
+| --- | --- |
+| BTC | `bc1qxqfhumpqtnxrznkx9r4xsp8m6zsedtgusjns7p` |
+| ETH | `0x2d92f9e4d8ac7effa9cd7cd5eccd364cac7c201b` |
+| SOL | `B7N4e3KG9zWQBwMrtydS1B9wVBp2w62fAdryZdxAMBiz` |
+| USDT Ethereum / ERC-20 | `0x2d92f9e4d8ac7effa9cd7cd5eccd364cac7c201b` |
+
+Thank you for your support.
+
 ## 🧠 Notes
 
 This project is for research, testing, demos, and engineering experiments.
 
-Face search quality depends on:
-
-- Image quality
-- Lighting
-- Face angle
-- Occlusion
-- Resolution
-- Dataset quality
-- Face detection behavior
-- Threshold settings
+Face search quality depends on image quality, lighting, face angle, occlusion, resolution, dataset quality, face detection behavior, and threshold settings.
 
 The default threshold is only a practical starting point. For real use, evaluate and calibrate thresholds with your own dataset.
 
@@ -252,8 +202,6 @@ Face images and face embeddings may be sensitive biometric data.
 Before using this project, make sure you have the legal right and user consent to process the images.
 
 Do not publish private face datasets in a public repository.
-
-Recommended ignored files are already included in `.gitignore`.
 
 ## 🛣️ Future Plans
 
