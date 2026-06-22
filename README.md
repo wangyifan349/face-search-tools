@@ -187,6 +187,12 @@ Possible future additions:
 * Multi-model embedding comparison
 * Larger dataset search demos
 
+### InsightFace Face Search 🚀
+
+[`insightface_search.py`](https://github.com/wangyifan349/face-search-tools/blob/main/insightface_search.py) provides a simple InsightFace-based 1:N face similarity search tool. It uses the `buffalo_l` model, ranks gallery faces by cosine similarity, prints readable match results, and automatically switches between CUDA and CPU execution. ✨
+
+
+
 ## 📜 License
 
 This project is licensed under the **GNU Affero General Public License v3.0 only**.
