@@ -27,18 +27,6 @@ Current tool: `dlib_faiss_flask_1n_single_file.py`
 * 🌿 Simple Bootstrap interface
 * 📜 AGPL-3.0-only license
 
-## 📦 Repository
-
-```text
-https://github.com/wangyifan349/face-search-tools
-```
-
-Suggested GitHub description:
-
-```text
-Open-source face search toolkit for local image datasets, including 1:N search with dlib embeddings, FAISS ranking, cosine similarity, and Euclidean distance.
-```
-
 ## 🐧 Linux Setup
 
 Tested-style setup for Ubuntu / Debian.
